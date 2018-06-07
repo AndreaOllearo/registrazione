@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { IonicStorageModule } from '@ionic/storage';
 import { LoginPage } from '../pages/login/login';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
@@ -20,11 +20,13 @@ import { AuthService } from '../providers/auth-service/auth-service';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    AboutPage
+    AboutPage,
+    RegisterPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,7 +35,8 @@ import { AuthService } from '../providers/auth-service/auth-service';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    AboutPage
+    AboutPage,
+    RegisterPage,
   ],
   providers: [
     StatusBar,
